@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>LED Pixel Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>LED Pixel Calculator</h1>
+
+    <div class="form-group">
+        <label for="screen-type">Screen Type (500mm Cabinet):</label>
+        <select id="screen-type">
+            <option value="P1.5">P1.5 (320px)</option>
+            <option value="P1.9">P1.9 (256px)</option>
+            <option value="P2.5">P2.5 (200px)</option>
+            <option value="P2.6">P2.6 (192px)</option>
+            <option value="P2.9" selected>P2.9 (168px)</option>
+            <option value="P3.1">P3.1 (160px)</option>
+            <option value="P3.9">P3.9 (128px)</option>
+            <option value="P4.8">P4.8 (104px)</option>
+            <option value="P5.9">P5.9 (84px)</option>
+            <option value="P6.2">P6.2 (80px)</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="width">Width:</label>
+        <div style="display: flex; gap: 10px;">
+            <input type="number" id="width" step="0.01" placeholder="Enter width">
+            <select id="width-unit" style="width: 120px;">
+                <option value="meters">Meters</option>
+                <option value="centimeters">cm</option>
+                <option value="millimeters">mm</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="height">Height:</label>
+        <div style="display: flex; gap: 10px;">
+            <input type="number" id="height" step="0.01" placeholder="Enter height">
+            <select id="height-unit" style="width: 120px;">
+                <option value="meters">Meters</option>
+                <option value="centimeters">cm</option>
+                <option value="millimeters">mm</option>
+            </select>
+        </div>
+    </div>
+
+    <button onclick="calculateDimensions()">Calculate Resolution</button>
+    <button id="clear" onclick="clearInputs()">Clear All</button>
+
+    <div id="result" class="result" style="display: none;">
+    </div>
+</div>
+
+<div id="backToTopIcon" onclick="scrollToTop()" style="display: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7-7-7 7"></path>
+    </svg>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
